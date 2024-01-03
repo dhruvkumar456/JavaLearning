@@ -1,3 +1,6 @@
+//Groovy language is used in this gradle file
+
+// Everything in gradle is essentially is plug, by default script cannot do anything on their own.
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.1'
@@ -7,6 +10,7 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
+//java version is defined here
 java {
     sourceCompatibility = '17'
 }
@@ -17,18 +21,30 @@ configurations {
     }
 }
 
+// All the dependencies are downloaded from repositories ie defined below
 repositories {
     mavenCentral()
+//    mavenLocal() // use local repository to download dependencies
+    google() // use local repository to download dependencies
 }
 
+//All dependencies is defined here
 dependencies {
+
+//    scopeOfDependency -> weather compile(implementation) scope or testCompile(testImplementation) scope
+//    implementation scope -> dependencies are availbale during compilation of the project
+//    testImplementation -> dependencies are availbale during compilation of the test cases
+//    api scope is also there, but for this to use we need to use plugin - 'id java-library'
+
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    implementation project(':my-packageName/moduleName') --> adding our custom package i.e. present in root of the project
 }
 
+// Use JUnitPlaform to run all these test cases defined in the
 tasks.named('test') {
     useJUnitPlatform()
 }
