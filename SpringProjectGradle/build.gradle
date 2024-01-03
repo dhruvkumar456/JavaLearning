@@ -48,3 +48,14 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+//allprojects contains the setting that is applied to be globally & will be used in all the sub-projects
+//'allprojects {' is generally present in build.gradle file that is present in root of the project
+
+//allprojects {
+//    group = 'com.tripactions'
+//    version = "0.1${project.revision}"
+//    repositories {
+//        mavenCentral()
+//    }
+//}

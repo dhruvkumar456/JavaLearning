@@ -1,1 +1,14 @@
 rootProject.name = 'SpringProjectGradle'
+
+// This file is used to define structure of multi-project build.
+//A multi-project build is when your project consists of multiple subprojects. Each subproject may have its own build.gradle file.
+
+//In this file we define which directory are considered as subprojects
+// Example
+//include 'SubProjectName1'
+//include 'SubProjectName2'
+
+
+//NOTE: In multi-level project, build.gradle file present in root directory serves special purpose..
+//It includes setting, configurations dependencies that required in all the child-projects
+// Each sub-projects build.gradle file contains the project specific setting, configurations dependencies
