@@ -1,4 +1,4 @@
-package com.example.springproject.student;
+package com.example.springprojectgradle.student;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
